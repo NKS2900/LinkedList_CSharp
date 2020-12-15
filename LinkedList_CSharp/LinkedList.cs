@@ -85,5 +85,19 @@ namespace LinkedList_CSharp
                 temp = temp.next;
             }
         }
+
+        /// <summary>
+        /// Removes the first node.
+        /// </summary>
+        /// <returns></returns>
+        internal Node RemoveFirstNode()
+        {
+            if (this.head == null)
+            {
+                return null;
+            }
+            this.head = this.head.next;
+            return this.head;
+        }
     }
 }
