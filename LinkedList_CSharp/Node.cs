@@ -3,7 +3,7 @@ using System.Text;
 
 namespace LinkedList_CSharp
 {
-    class Node
+    public class Node
     {
         public int data;
         public Node next;

@@ -4,7 +4,7 @@ using System.Text;
 namespace LinkedList_CSharp
 {
 
-    class LinkedList
+    public class LinkedList
     {
         internal Node head;
 
@@ -12,7 +12,7 @@ namespace LinkedList_CSharp
         /// Adds the specified data.
         /// </summary>
         /// <param name="data">The data.</param>
-        internal void Add(int data)
+        public void Add(int data)
         {
             Node node = new Node(data);
 
@@ -100,7 +100,10 @@ namespace LinkedList_CSharp
             return this.head;
         }
 
-
+        /// <summary>
+        /// Removes the last node.
+        /// </summary>
+        /// <returns></returns>
         internal Node RemoveLastNode()
         {
             if (head == null)
@@ -118,6 +121,24 @@ namespace LinkedList_CSharp
             }
             NewNode.next = null;
             return head;
+        }
+
+        /// <summary>
+        /// Searches the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        public Node Search(int value)
+        {
+            while (this.head != null)
+            {
+                if (this.head.data == value)
+                {
+                    return this.head;
+                }
+                this.head = this.head.next;
+            }
+            return null;
         }
     }
 }
