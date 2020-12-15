@@ -8,10 +8,12 @@ namespace LinkedList_CSharp
         {
             Console.WriteLine("***Welcome_To_LinkedListApp***");
             LinkedList list = new LinkedList();
-            list.Add(56);
-            list.Add(30);
+            Console.WriteLine("Add_To_Begining");
             list.Add(70);
+            list.Add(30);
+            list.Add(56);
             list.Display();
+            Console.ReadLine();
         }
     }
 }

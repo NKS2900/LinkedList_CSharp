@@ -8,25 +8,29 @@ namespace LinkedList_CSharp
     {
         internal Node head;
 
+        /// <summary>
+        /// Adds to first.
+        /// </summary>
+        /// <param name="data">The data.</param>
         internal void Add(int data)
         {
             Node node = new Node(data);
-
-            if (this.head == null)
+            if (head == null)
             {
-                this.head = node;
+                head = new Node(data);
             }
             else
             {
-                Node temp = head;
-                while (temp.next != null)
-                {
-                    temp = temp.next;
-                }
-                temp.next = node;
+                Node temp = new Node(data);
+                temp.next = head;
+                head = temp;
             }
+
         }
 
+        /// <summary>
+        /// Displays this instance.
+        /// </summary>
         internal void Display()
         {
             Node temp = this.head;
@@ -37,7 +41,7 @@ namespace LinkedList_CSharp
             }
             while (temp != null)
             {
-                Console.WriteLine(temp.data + " ");
+                Console.Write(temp.data + " -> ");
                 temp = temp.next;
             }
         }
