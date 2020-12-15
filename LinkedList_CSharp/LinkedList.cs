@@ -9,29 +9,32 @@ namespace LinkedList_CSharp
         internal Node head;
 
         /// <summary>
-        /// Adds to first.
+        /// Adds the specified data.
         /// </summary>
         /// <param name="data">The data.</param>
         internal void Add(int data)
         {
             Node node = new Node(data);
-            if (head == null)
+
+            if (this.head == null)
             {
-                head = new Node(data);
+                this.head = node;
             }
             else
             {
-                Node temp = new Node(data);
-                temp.next = head;
-                head = temp;
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
             }
-
         }
 
-        /// <summary>
-        /// Displays this instance.
-        /// </summary>
-        internal void Display()
+            /// <summary>
+            /// Displays this instance.
+            /// </summary>
+            internal void Display()
         {
             Node temp = this.head;
             if (temp == null)
