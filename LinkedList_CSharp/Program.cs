@@ -9,8 +9,10 @@ namespace LinkedList_CSharp
             Console.WriteLine("***Welcome_To_LinkedListApp***");
             LinkedList list = new LinkedList();
             list.Add(56);
-            list.Add(30);
             list.Add(70);
+            list.Display();
+            Console.WriteLine("\nAfter Inserting Element...");
+            list.InserAtParticularPosition(2, 30);
             list.Display();
             Console.ReadLine();
         }
