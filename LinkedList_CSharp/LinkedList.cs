@@ -37,7 +37,7 @@ namespace LinkedList_CSharp
         /// <param name="position">The position.</param>
         /// <param name="data">The data.</param>
         /// <returns></returns>
-        internal Node InserAtParticularPosition(int position, int data)
+        public Node InserAtParticularPosition(int position, int data)
         {
             if (position < 1)
             {
@@ -51,6 +51,7 @@ namespace LinkedList_CSharp
             }
             else
             {
+                var firstHead = this.head;
                 while (position-- != 0)
                 {
                     if (position == 1)
@@ -62,10 +63,14 @@ namespace LinkedList_CSharp
                     }
                     head = head.next;
                 }
+                
+                firstHead.next = head;
+                head = firstHead;
+
                 if (position != 1)
                     Console.WriteLine("Position out of range...");
             }
-            return head;
+           return head;
         }
 
         /// <summary>
@@ -139,6 +144,26 @@ namespace LinkedList_CSharp
                 this.head = this.head.next;
             }
             return null;
+        }
+
+        /// <summary>
+        /// Find The position of Node
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public int findPoistion(int value)
+        {
+            int position = 0;
+            while (this.head != null)
+            {
+                position++;
+                if (this.head.data == value)
+                {
+                    return position;
+                }
+                this.head = this.head.next;
+            }
+            return position;
         }
     }
 }
