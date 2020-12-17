@@ -168,7 +168,7 @@ namespace LinkedList_CSharp
 
         public void deleteNode(int value)
         {
-            
+
             // Store head node 
             Node temp = head, prev = null;
 
@@ -206,5 +206,26 @@ namespace LinkedList_CSharp
             }
             return count;
         }
+
+        public void SortedList(int data)
+        {
+            Node newNode = new Node(data);
+            Node Current;
+            if (head == null || head.data >= newNode.data)
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+            else
+            {
+                Current = head;
+                while (Current.next != null && Current.next.data < newNode.data)
+                    Current = Current.next;
+
+                newNode.next = Current.next;
+                Current.next = newNode;
+            }
+        }
+
     }
 }
