@@ -18,16 +18,20 @@ namespace LinkedList_CSharp
             Console.WriteLine("\nAfter Deleting Last Node");
             list.RemoveLastNode();
             list.Display();
-            Console.WriteLine("New LinkedList");
+            Console.WriteLine("\nNew LinkedList");
             LinkedList list1 = new LinkedList();
             list1.Add(56);
             list1.Add(30);
             list1.Add(70);
             list1.Display();
             Console.WriteLine("\nAfter Inserting Element...");
-            list.InserAtParticularPosition(3, 40);
-            list.Display();
-            Console.WriteLine("\nPosition of 30--> " + list.findPoistion(30));
+            list1.InserAtParticularPosition(3, 40);
+            list1.Display();
+            Console.WriteLine("\nPosition of 30--> " + list1.findPoistion(30));
+            list1.deleteNode(40);
+            Console.WriteLine("After Deleting Node");
+            list1.Display();
+            Console.WriteLine("Linkelist Size " + list1.count());
             Console.ReadLine();
         }
     }

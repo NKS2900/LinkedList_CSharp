@@ -26,10 +26,11 @@ namespace LinkedListTesting
         public void FindPosition_ofElement_ThenAdd40ToAfter30()
         {
             LinkedList list = new LinkedList();
+            int position = 3;
             list.Add(56);
             list.Add(30);
             list.Add(70);
-            list.InserAtParticularPosition(3, 40);
+            list.InserAtParticularPosition(position, 40);
             Node result = list.Search(40);
             Assert.AreEqual(40, result.data);
 

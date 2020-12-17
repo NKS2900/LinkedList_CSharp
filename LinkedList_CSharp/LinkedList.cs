@@ -46,31 +46,31 @@ namespace LinkedList_CSharp
             if (position == 1)
             {
                 var newNode = new Node(data);
-                newNode.next = this.head;
+                newNode.next = head;
                 head = newNode;
             }
             else
             {
-                var firstHead = this.head;
+                var firstHead = head;
                 while (position-- != 0)
                 {
                     if (position == 1)
                     {
                         Node node = new Node(data);
-                        node.next = this.head.next;
+                        node.next = head.next;
                         head.next = node;
                         break;
                     }
                     head = head.next;
                 }
-                
+
                 firstHead.next = head;
                 head = firstHead;
 
                 if (position != 1)
                     Console.WriteLine("Position out of range...");
             }
-           return head;
+            return head;
         }
 
         /// <summary>
@@ -164,6 +164,47 @@ namespace LinkedList_CSharp
                 this.head = this.head.next;
             }
             return position;
+        }
+
+        public void deleteNode(int value)
+        {
+            
+            // Store head node 
+            Node temp = head, prev = null;
+
+            if (temp != null && temp.data == value)
+            {
+                // Changed head 
+                head = temp.next;
+                return;
+            }
+
+            while (temp != null && temp.data != value)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+
+            if (temp == null)
+                return;
+
+            prev.next = temp.next;
+        }
+
+        /// <summary>
+        /// Method to count size of list
+        /// </summary>
+        /// <returns></returns>
+        public int count()
+        {
+            Node temp = head;
+            int count = 0;
+            while (temp != null)
+            {
+                count++;
+                temp = temp.next;
+            }
+            return count;
         }
     }
 }
